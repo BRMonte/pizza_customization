@@ -1,14 +1,28 @@
 import './App.css';
 import { Home, Contact, About } from './pages';
+import { Nav } from './layout';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <h1>HELLO PROPPERS!</h1>
-      <Home />
-      <About />
-      <Contact />
-    </div>
+    <Router>
+      <Switch>
+        <Nav />
+        <Route path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
